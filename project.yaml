@@ -1,0 +1,9 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Project
+metadata:
+  name: kargo-kustomize-poc
+spec:
+promotionPolicies:
+- stage: dev
+- stage: staging
+- stage: production
