@@ -32,7 +32,7 @@ spec:
           - image: ghcr.io/jane-delivery/akuity-poc-app
       - uses: kustomize-build
         config:
-          path: ./src/app/env/dev
+          path: ./src/kustomize/env/dev
           outPath: ./out/dev/manifests.yaml
       - uses: git-commit
         as: commit
@@ -80,8 +80,8 @@ spec:
         - image: ghcr.io/jane-delivery/akuity-poc-app
     - uses: kustomize-build
       config:
-        path: ./src/app/env/staging
-        outPath: ./out/stage/dev/manifests.yaml
+        path: ./src/kustomize/env/staging
+        outPath: ./out/staging/manifests.yaml
     - uses: git-commit
       as: commit
       config:
@@ -128,8 +128,8 @@ spec:
         - image: ghcr.io/jane-delivery/akuity-poc-app
     - uses: kustomize-build
       config:
-        path: ./src/app/env/production
-        outPath: ./out/stage/dev/manifests.yaml
+        path: ./src/kustomize/env/production
+        outPath: ./out/production/manifests.yaml
     - uses: git-commit
       as: commit
       config:
