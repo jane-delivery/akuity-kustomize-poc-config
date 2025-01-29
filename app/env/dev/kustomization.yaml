@@ -9,4 +9,4 @@ namespace: kustomize-poc-dev
 images:
 - name: ghcr.io/jane-delivery/akuity-poc-app
   newName: ghcr.io/jane-delivery/akuity-poc-app
-  newTag: v0.0.1
+  newTag: v0.0.3
