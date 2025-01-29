@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kustomize-poc-production
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kustomize-poc
+  namespace: kustomize-poc-production
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: kustomize-poc
+  template:
+    metadata:
+      labels:
+        app: kustomize-poc
+    spec:
+      containers:
+      - image: ghcr.io/jane-delivery/akuity-poc-app:0.0.1
+        name: kustomize-poc
+        ports:
+        - containerPort: 8080
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kustomize-poc
+  namespace: kustomize-poc-production
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
+  selector:
+    app: kustomize-poc
