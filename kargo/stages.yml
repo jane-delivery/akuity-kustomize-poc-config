@@ -32,7 +32,7 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./out/dev
+          path: ./out/dev/manifests.yaml
           messageFromSteps:
           - update-image
       - uses: git-push
