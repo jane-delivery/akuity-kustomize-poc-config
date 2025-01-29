@@ -28,16 +28,16 @@ spec:
       - uses: kustomize-build
         config:
           path: ./src/app/env/dev
-          outPath: ./src/app/env/dev/manifests.yaml
+          outPath: ./src/dev/manifests.yaml
       - uses: git-commit
         as: commit
         config:
-          path: ./out
+          path: ./src
           messageFromSteps:
           - update-image
       - uses: git-push
         config:
-          path: ./out
+          path: ./src
           targetBranch: main
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -71,7 +71,7 @@ spec:
       - uses: kustomize-build
         config:
           path: ./src/app/env/staging
-          outPath: ./out/staging/manifests.yaml
+          outPath: ./src/staging/manifests.yaml
       - uses: git-commit
         as: commit
         config:
@@ -80,7 +80,7 @@ spec:
           - update-image
       - uses: git-push
         config:
-          path: ./out/staging
+          path: ./src
           targetBranch: main
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -114,7 +114,7 @@ spec:
       - uses: kustomize-build
         config:
           path: ./src/app/env/production
-          outPath: ./out/production/manifests.yaml
+          outPath: ./src/production/manifests.yaml
       - uses: git-commit
         as: commit
         config:
@@ -123,5 +123,5 @@ spec:
           - update-image
       - uses: git-push
         config:
-          path: ./out/production
+          path: ./src
           targetBranch: main
