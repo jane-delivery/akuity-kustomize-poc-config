@@ -70,7 +70,7 @@ spec:
           - image: ghcr.io/jane-delivery/akuity-poc-app
       - uses: kustomize-build
         config:
-          path: ./src/app/env/staging
+          path: ./src/app/base
           outPath: ./src/staging/manifests.yaml
       - uses: git-commit
         as: commit
@@ -113,7 +113,7 @@ spec:
           - image: ghcr.io/jane-delivery/akuity-poc-app
       - uses: kustomize-build
         config:
-          path: ./src/app/env/production
+          path: ./src/app/base
           outPath: ./src/production/manifests.yaml
       - uses: git-commit
         as: commit
