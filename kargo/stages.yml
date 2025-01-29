@@ -118,7 +118,7 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./out/production
+          path: ./src/production
           messageFromSteps:
           - update-image
       - uses: git-push
