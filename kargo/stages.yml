@@ -44,12 +44,12 @@ apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
   name: staging
-  namespace: kargo-kustomize-poc
+  namespace: kustomize-poc
 spec:
   requestedFreight:
   - origin:
       kind: Warehouse
-      name: kargo-kustomize-poc
+      name: kustomize-poc
     sources:
       stages:
       - dev
@@ -87,12 +87,12 @@ apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
   name: production
-  namespace: kargo-kustomize-poc
+  namespace: kustomize-poc
 spec:
   requestedFreight:
   - origin:
       kind: Warehouse
-      name: kargo-kustomize-poc
+      name: kustomize-poc
     sources:
       stages:
       - staging
