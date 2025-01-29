@@ -28,16 +28,16 @@ spec:
       - uses: kustomize-build
         config:
           path: ./src/app/env/dev
-          outPath: ./out/env/dev/manifests.yaml
+          outPath: ./src/app/env/dev/manifests.yaml
       - uses: git-commit
         as: commit
         config:
-          path: ./out/app/env/dev/manifests.yaml
+          path: ./src/app/env/dev/manifests.yaml
           messageFromSteps:
           - update-image
       - uses: git-push
         config:
-          path: ./out
+          path: ./src
           targetBranch: main
 ---
 apiVersion: kargo.akuity.io/v1alpha1
