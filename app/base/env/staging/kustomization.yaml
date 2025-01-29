@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+
+namespace: kustomize-poc-staging
+
+images:
+- name: ghcr.io/jane-delivery/akuity-poc-app
+  newName: ghcr.io/jane-delivery/akuity-poc-app
+  newTag: v0.0.1
