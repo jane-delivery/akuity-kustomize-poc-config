@@ -75,7 +75,7 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./out/staging
+          path: ./src/staging
           messageFromSteps:
           - update-image
       - uses: git-push
