@@ -2,7 +2,7 @@ apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
 metadata:
   name: akuity-poc-app
-  namespace: kargo-simple
+  namespace: kustomize-poc
 spec:
   subscriptions:
   - image:

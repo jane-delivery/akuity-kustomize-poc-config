@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kustomize-poc
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: kustomize-poc
+  template:
+    metadata:
+      labels:
+        app: kustomize-poc
+    spec:
+      containers:
+      - image: ghcr.io/jane-delivery/akuity-poc-app:latest
+        name: kustomize-poc
+        ports:
+        - name: http
+          containerPort: 8080
