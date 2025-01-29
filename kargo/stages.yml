@@ -32,12 +32,12 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./src/app/env/dev/manifests.yaml
+          path: ./out
           messageFromSteps:
           - update-image
       - uses: git-push
         config:
-          path: ./src
+          path: ./out
           targetBranch: main
 ---
 apiVersion: kargo.akuity.io/v1alpha1
