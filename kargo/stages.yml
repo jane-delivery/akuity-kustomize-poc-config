@@ -22,12 +22,12 @@ spec:
       - uses: kustomize-set-image
         as: update-image
         config:
-          path: ./src/app/base
+          path: ./src/app/base/dev
           images:
           - image: ghcr.io/jane-delivery/akuity-poc-app
       - uses: kustomize-build
         config:
-          path: ./src/app/base
+          path: ./src/app/base/dev
           outPath: ./src/dev/manifests.yaml
       - uses: git-commit
         as: commit
@@ -65,12 +65,12 @@ spec:
       - uses: kustomize-set-image
         as: update-image
         config:
-          path: ./src/app/base
+          path: ./src/app/base/staging
           images:
           - image: ghcr.io/jane-delivery/akuity-poc-app
       - uses: kustomize-build
         config:
-          path: ./src/app/base
+          path: ./src/app/base/staging
           outPath: ./src/staging/manifests.yaml
       - uses: git-commit
         as: commit
@@ -108,12 +108,12 @@ spec:
       - uses: kustomize-set-image
         as: update-image
         config:
-          path: ./src/app/base
+          path: ./src/app/base/production
           images:
           - image: ghcr.io/jane-delivery/akuity-poc-app
       - uses: kustomize-build
         config:
-          path: ./src/app/base
+          path: ./src/app/base/production
           outPath: ./src/production/manifests.yaml
       - uses: git-commit
         as: commit
