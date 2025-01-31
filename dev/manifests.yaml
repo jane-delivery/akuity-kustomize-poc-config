@@ -20,7 +20,7 @@ spec:
         app: kustomize-poc
     spec:
       containers:
-      - image: ghcr.io/jane-delivery/akuity-poc-app:v0.0.6
+      - image: ghcr.io/jane-delivery/akuity-poc-app:v0.0.7
         name: kustomize-poc
         ports:
         - containerPort: 8080
