@@ -32,7 +32,7 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./src/dev
+          path: ./src
           messageFromSteps:
           - update-image
       - uses: git-push
@@ -75,7 +75,7 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./src/staging
+          path: ./src
           messageFromSteps:
           - update-image
       - uses: git-push
@@ -118,7 +118,7 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./src/production
+          path: ./src
           messageFromSteps:
           - update-image
       - uses: git-push
