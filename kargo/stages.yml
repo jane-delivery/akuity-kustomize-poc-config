@@ -32,7 +32,7 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ./src
+          path: ./src/dev
           messageFromSteps:
           - update-image
       - uses: git-push
