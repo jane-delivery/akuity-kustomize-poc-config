@@ -6,21 +6,21 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kustomize-poc
+  name: kustomize-poc-staging
   namespace: kustomize-poc
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: kustomize-poc
+      app: kustomize-poc-staging
   template:
     metadata:
       labels:
-        app: kustomize-poc
+        app: kustomize-poc-staging
     spec:
       containers:
-      - image: ghcr.io/jane-delivery/akuity-poc-app:v0.0.7
+      - image: ghcr.io/jane-delivery/akuity-poc-app:v0.0.8
         name: kustomize-poc
         ports:
         - containerPort: 8080
@@ -29,7 +29,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: kustomize-poc
+  name: kustomize-poc-staging
   namespace: kustomize-poc
 spec:
   ports:
@@ -37,4 +37,4 @@ spec:
     port: 80
     targetPort: http
   selector:
-    app: kustomize-poc
+    app: kustomize-poc-staging
