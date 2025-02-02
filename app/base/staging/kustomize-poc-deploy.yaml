@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kustomize-poc-staging
+  namespace: kustomize-poc-staging
 spec:
   replicas: 1
   revisionHistoryLimit: 3
