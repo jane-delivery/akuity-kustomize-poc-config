@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: kustomize-poc-staging
+  name: kustomize-poc
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -20,7 +20,7 @@ spec:
         app: kustomize-poc-staging
     spec:
       containers:
-      - image: ghcr.io/jane-delivery/akuity-poc-app:v0.0.8
+      - image: ghcr.io/jane-delivery/akuity-poc-app:v0.0.9
         name: kustomize-poc
         ports:
         - containerPort: 8080
